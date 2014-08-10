@@ -1,0 +1,17 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Web Developer: Jason Rodriguez
+  Site: http://jasonrodriguez.net
+  Twitter: @jasonactual
+  Location: Portland, Oregon
+
+/* THANKS */
+Dan Linn
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+

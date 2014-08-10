@@ -1,0 +1,674 @@
+@font-face {
+    font-family: 'knarfart';
+    src: url('/knarfart.ttf');
+}
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+    Custom styles
+   ========================================================================== */
+
+/*
+ * Base
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+a {
+    font-size: 1em;
+    color: black;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+h1, h2 {
+    font-family: 'knarfart';
+}
+
+/*
+ * Main Containers
+ */
+
+.main-container {
+    height: 100%;
+    text-align: center;
+    background-image:
+    url(../img/section9-bg.png),
+    url(../img/bg.png);
+    background-blend-mode: overlay;
+    background-size: 100% 100%, cover;
+}
+
+.title-container {
+    background-color:rgba(200, 54, 54, 0.5);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.title-container, .map-container, .main-footer,
+.main-container, .navbar {
+    -webkit-transition: all 1s ease;
+}
+
+/*
+ * Navigation
+ */
+
+.map-container {
+    background-color:rgba(200, 54, 54, 0.5);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#map {
+    display:none;
+}
+
+
+.profile-grid-cell {
+    text-decoration: none;
+    margin: 10px;
+}
+
+.profile-grid-cell img {
+    border-radius: 10px;
+}
+
+/*
+ * Footer
+ */
+
+.main-footer {
+    background-color:rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.footer-title, .player-title {
+    color: white;
+}
+
+/*
+ * Off-Canvas Menu
+ */
+
+.navbar {
+    position: fixed;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+      background-image:
+      url(../img/bg.png);
+    overflow: hidden;
+
+    -webkit-transform: translate(-100%, 0);
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    font-size: 1em;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.menu-toggle {
+    display: block;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+    Custom Grid system
+   ========================================================================== */
+
+.row {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Desktop */
+
+.large-1 {
+    width: 8.333333333333332%;
+}
+
+.large-2 {
+    width: 16.666666666666664%;
+}
+
+.large-3 {
+    width: 25%;
+}
+
+.large-4 {
+    width: 33.33333333333333%;
+}
+
+.large-5 {
+    width: 41.66666666666667%;
+}
+
+.large-6 {
+    width: 50%;
+}
+
+.large-7 {
+    width: 58.333333333333336%;
+}
+
+.large-8 {
+    width: 66.66666666666666%;
+}
+
+.large-9 {
+    width: 75%;
+}
+
+.large-10 {
+    width: 83.33333333333334%;
+}
+
+.large-11 {
+    width: 91.66666666666666%;
+}
+
+.large-12 {
+    width: 100%;
+}
+
+/* ==========================================================================
+    Media Queries
+   ========================================================================== */
+
+@media only screen and (max-width: 400px) {
+
+    /* Mobile */
+
+    .row {
+        max-width: 400px;
+    }
+
+    .small-1 {
+        width: 8.333333333333332%;
+    }
+
+    .small-2 {
+        width: 16.666666666666664%;
+    }
+
+    .small-3 {
+        width: 25%;
+    }
+
+    .small-4 {
+        width: 33.33333333333333%;
+    }
+
+    .small-5 {
+        width: 41.66666666666667%;
+    }
+
+    .small-6 {
+        width: 50%;
+    }
+
+    .small-7 {
+        width: 58.333333333333336%;
+    }
+
+    .small-8 {
+        width: 66.66666666666666%;
+    }
+
+    .small-9 {
+        width: 75%;
+    }
+
+    .small-10 {
+        width: 83.33333333333334%;
+    }
+
+    .small-11 {
+        width: 91.66666666666666%;
+    }
+
+    .small-12 {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+
+    /* Tablet */
+
+    .row {
+        max-width: 768px;
+    }
+
+    .medium-1 {
+        width: 8.333333333333332%;
+    }
+
+    .medium-2 {
+        width: 16.666666666666664%;
+    }
+
+    .medium-3 {
+        width: 25%;
+    }
+
+    .medium-4 {
+        width: 33.33333333333333%;
+    }
+
+    .medium-5 {
+        width: 41.66666666666667%;
+    }
+
+    .medium-6 {
+        width: 50%;
+    }
+
+    .medium-7 {
+        width: 58.333333333333336%;
+    }
+
+    .medium-8 {
+        width: 66.66666666666666%;
+    }
+
+    .medium-9 {
+        width: 75%;
+    }
+
+    .medium-10 {
+        width: 83.33333333333334%;
+    }
+
+    .medium-11 {
+        width: 91.66666666666666%;
+    }
+
+    .medium-12 {
+        width: 100%;
+    }
+}
+
+/*@media screen and (max-width:1140px) {*/
+
+    /* Tablet */
+
+ /*   .row {
+        width: 1140px;
+    }
+
+    .full-1 {
+        width: 8.333333333333332%;
+    }
+
+    .full-2 {
+        width: 16.666666666666664%;
+    }
+
+    .full-3 {
+        width: 25%;
+    }
+
+    .full-4 {
+        width: 33.33333333333333%;
+    }
+
+    .full-5 {
+        width: 41.66666666666667%;
+    }
+
+    .full-6 {
+        width: 50%;
+    }
+
+    .full-7 {
+        width: 58.333333333333336%;
+    }
+
+    .full-8 {
+        width: 66.66666666666666%;
+    }
+
+    .full-9 {
+        width: 75%;
+    }
+
+    .full-10 {
+        width: 83.33333333333334%;
+    }
+
+    .full-11 {
+        width: 91.66666666666666%;
+    }
+
+    .full-12 {
+        width: 100%;
+    }
+}*/
+
+/*@media screen and (min-width : 1141px) {*/
+
+    /* Large screens */
+
+ /*   .row {
+        width: 2560px;
+    }
+
+    .max-1 {
+        width: 8.333333333333332%;
+    }
+
+    .max-2 {
+        width: 16.666666666666664%;
+    }
+
+    .max-3 {
+        width: 25%;
+    }
+
+    .max-4 {
+        width: 33.33333333333333%;
+    }
+
+    .max-5 {
+        width: 41.66666666666667%;
+    }
+
+    .max-6 {
+        width: 50%;
+    }
+
+    .max-7 {
+        width: 58.333333333333336%;
+    }
+
+    .max-8 {
+        width: 66.66666666666666%;
+    }
+
+    .max-9 {
+        width: 75%;
+    }
+
+    .max-10 {
+        width: 83.33333333333334%;
+    }
+
+    .max-11 {
+        width: 91.66666666666666%;
+    }
+
+    .max-12 {
+        width: 100%;
+    }
+}*/
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+    a,
+    a:visited {
+text-decoration: underline;
+    }
+
+    a[href]:after {
+content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+content: "";
+    }
+
+    pre,
+    blockquote {
+border: 1px solid #999;
+page-break-inside: avoid;
+    }
+
+    thead {
+display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+page-break-inside: avoid;
+    }
+
+    @page {
+margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+orphans: 3;
+widows: 3;
+    }
+
+    h2,
+    h3 {
+page-break-after: avoid;
+    }
+}
